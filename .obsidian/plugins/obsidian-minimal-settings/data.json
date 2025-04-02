@@ -1,7 +1,11 @@
 {
   "lightStyle": "minimal-light-tonal",
   "darkStyle": "minimal-dark",
+<<<<<<< HEAD
   "lightScheme": "minimal-atom-light",
+=======
+  "lightScheme": "minimal-default-light",
+>>>>>>> e5c1a7005edee5cf2e0725757fa5586b17c47557
   "darkScheme": "minimal-default-dark",
   "editorFont": "",
   "lineHeight": 1.5,
