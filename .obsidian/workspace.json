@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "数据库系统概念.md",
+                "file": "The world this week.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "数据库系统概念"
+              "title": "The world this week"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "数据库系统概念.md",
+                "file": "The world this week.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "数据库系统概念 的大纲"
+              "title": "The world this week 的大纲"
             }
           }
         ],
@@ -174,15 +174,16 @@
   },
   "active": "7183527f5b9eace9",
   "lastOpenFiles": [
+    "word.md",
+    "日记/2025-04-02.md",
+    "数据库系统概念.md",
     "计算机复试.md",
     "计算机考试（C语言）.md",
     "现代操作系统.md",
     "杨亮.md",
-    "数据库系统概念.md",
     "数据库.md",
     "上海交通大学学生生存手册.pdf",
     "Untitled.md",
-    "日记/2025-04-02.md",
     "study_notes/设计模式.md",
     "study_notes/计算机考试（C语言）.md",
     "study_notes/计算机网络.md",
@@ -204,7 +205,6 @@
     "study_notes/数据结构与算法.md",
     "study_notes/数据结构.mmap",
     "study_notes/数据库题目.md",
-    "study_notes/数据库系统概念.md",
     "study_notes/安全算法.xmind",
     "study_notes/安全算法.mmap",
     "study_notes/上海交通大学学生生存手册.pdf",

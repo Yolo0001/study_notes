@@ -1,1 +1,0 @@
-https://feedx.net/rss/economistp.xml
