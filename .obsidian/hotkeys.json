@@ -33,5 +33,22 @@
     }
   ],
   "workspace:goto-tab-2": [],
-  "workspace:goto-tab-3": []
+  "workspace:goto-tab-3": [],
+  "editor:insert-codeblock": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Q"
+    }
+  ],
+  "editor:set-heading-4": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "4"
+    }
+  ],
+  "workspace:goto-tab-4": []
 }

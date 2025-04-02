@@ -1,6 +1,7 @@
 {
   "theme": "moonstone",
-  "cssTheme": "Minimal",
+  "cssTheme": "Obsidian Nord",
   "interfaceFontFamily": "霞骛文楷,霞骛臻楷",
-  "textFontFamily": "霞骛文楷,霞骛臻楷"
+  "textFontFamily": "霞骛文楷,霞骛臻楷",
+  "accentColor": ""
 }
