@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The world this week.md",
+                "file": "数据库系统概念.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The world this week"
+              "title": "数据库系统概念"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The world this week.md",
+                "file": "数据库系统概念.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "The world this week 的大纲"
+              "title": "数据库系统概念 的大纲"
             }
           }
         ],
@@ -165,18 +165,17 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "obsidian-language-learner:打开查词面板": false,
-      "obsidian-language-learner:打开新词面板": false,
-      "obsidian-language-learner:打开统计": false,
-      "obsidian-language-learner:单词列表": false
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "7183527f5b9eace9",
+  "active": "155503d546732aaf",
   "lastOpenFiles": [
+    "img/数据库各级模式.png",
+    "Mysql.md",
+    "数据库系统概念.md",
+    "The world this week.md",
     "word.md",
     "日记/2025-04-02.md",
-    "数据库系统概念.md",
     "计算机复试.md",
     "计算机考试（C语言）.md",
     "现代操作系统.md",
@@ -201,10 +200,7 @@
     "study_notes/杨亮.md",
     "study_notes/李靖瑜新思维词汇.mmap",
     "study_notes/机器学习.md",
-    "study_notes/数据结构题目.md",
-    "study_notes/数据结构与算法.md",
     "study_notes/数据结构.mmap",
-    "study_notes/数据库题目.md",
     "study_notes/安全算法.xmind",
     "study_notes/安全算法.mmap",
     "study_notes/上海交通大学学生生存手册.pdf",
