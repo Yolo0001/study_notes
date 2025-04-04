@@ -6,19 +6,19 @@
 
 一个项目，一个工程，导出为一个war包，在一个Tomcat上运行。也叫all in one。
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 142429.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 142429.png" style="zoom:60%;" />
 
 ### ②分布式架构
 
 一个项目（对应 IDEA 中的一个 project），拆分成很多个模块，每个模块是一个 IDEA 中的一个 module。每一个工程都是运行在自己的 Tomcat 上。模块之间可以互相调用。每一个模块内部可以看成是一个单一架构的应用。
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 142513.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 142513.png" style="zoom:60%;" />
 
 ## 2、框架的概念
 
 框架=jar包+配置文件
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 142608.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 142608.png" style="zoom:60%;" />
 
 ## 3、Mybatis历史
 
@@ -81,7 +81,7 @@ INSERT INTO `t_emp`(emp_name,emp_salary) VALUES("andy",777.77);
 
 #### ①创建Maven module
 
-![](D:\Study\自学\笔记\img\屏幕截图 2022-05-03 142928.png)
+![](./img/屏幕截图 2022-05-03 142928.png)
 
 #### ②创建 Java 实体类
 
@@ -134,7 +134,7 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "empId=" + empId +
-                ", empName='" + empName + '\'' +
+                ", empName='" + empName + '/'' +
                 ", empSalary=" + empSalary +
                 '}';
     }
@@ -237,7 +237,7 @@ public class Employee {
 | 属性     | 字段/列    |
 | 对象     | 记录/行    |
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 143225.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 143225.png" style="zoom:60%;" />
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -310,7 +310,7 @@ public void testSelectEmployee() throws IOException {
 
 #### ②图解
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 145257.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 145257.png" style="zoom:60%;" />
 
 #### ③源码
 
@@ -318,25 +318,25 @@ public void testSelectEmployee() throws IOException {
 
 所在类：org.apache.ibatis.session.defaults.DefaultSqlSessionFactory
 
-![](D:\Study\自学\笔记\img\img010.59b2b482.png)
+![](./img/img010.59b2b482.png)
 
 ##### [2]准备去获取已映射的指令
 
 所在类：org.apache.ibatis.session.defaults.DefaultSqlSession
 
-![](D:\Study\自学\笔记\img\img011.8bb25ed4.png)
+![](./img/img011.8bb25ed4.png)
 
 ##### [3]正式获取已映射的指令
 
 所在类：org.apache.ibatis.session.Configuration
 
-![](D:\Study\自学\笔记\img\下载.png)
+![](./img/下载.png)
 
 ##### [4]mappedStatements对象结构
 
 mappedStatements对象的类型：Configuration类中的一个静态内部类：StrictMap
 
-![](D:\Study\自学\笔记\img\img013.a9f775cc.png)
+![](./img/img013.a9f775cc.png)
 
 ## 第二节 HelloWorld强化
 
@@ -460,7 +460,7 @@ Mybatis 中的 Mapper 接口相当于以前的 Dao。但是区别在于，Mapper
 
 #### ①思路
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 150154.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 150154.png" style="zoom:60%;" />
 
 #### ②调整junit代码
 
@@ -726,7 +726,7 @@ select emp_id empId,emp_name empName,emp_salary empSalary from t_emp where emp_n
 
 ### 1、Mybatis总体机制概括
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 151316.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 151316.png" style="zoom:60%;" />
 
 ### 2、概念说明
 
@@ -742,9 +742,13 @@ select emp_id empId,emp_name empName,emp_salary empSalary from t_emp where emp_n
   - 数组类型：int[]、String[]、……
   - 复合类型：List<Employee>、实体类中包含集合……
 
+
+
+
 ### 3、单个简单类型参数
 
 #### ①Mapper接口中抽象方法的声明
+
 
 ```java
 Employee selectEmployee(Integer empId);
@@ -776,7 +780,7 @@ int insertEmployee(Employee employee);
 
 #### ③对应关系
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 151505.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 151505.png" style="zoom:60%;" />
 
 #### ④结论
 
@@ -800,7 +804,7 @@ int updateEmployee(@Param("empId") Integer empId,@Param("empSalary") Double empS
 
 #### ③对应关系
 
-![](D:\Study\自学\笔记\img\屏幕截图 2022-05-03 151647.png)
+![](./img/屏幕截图 2022-05-03 151647.png)
 
 ### 6、Map类型参数
 
@@ -1023,7 +1027,7 @@ insert into t_order_item(item_name,item_price,item_count,order_id) values(...)
 
 这里需要用到的order_id，是在保存Order对象时，数据库表以自增方式产生的，需要特殊办法拿到这个自增的主键值。至于，为什么不能通过查询最大主键的方式解决这个问题，参考下图：
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 153753.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 153753.png" style="zoom:60%;" />
 
 #### ②在Mapper配置文件中设置方式
 
@@ -1441,7 +1445,7 @@ order = Order{orderId=3, orderName='o3'}
 
 #### ④各个要素之间的对应关系
 
-<img src="D:\Study\自学\笔记\img\屏幕截图 2022-05-03 201234.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-03 201234.png" style="zoom:60%;" />
 
 ## 第五节 延迟加载
 
@@ -1455,7 +1459,7 @@ order = Order{orderId=3, orderName='o3'}
 
 ### 2、配置
 
-![](D:\Study\自学\笔记\img\img020.05c8cc7f.png)
+![[./img/img020.05c8cc7f.png]]
 
 #### ①较低版本
 
@@ -1523,12 +1527,14 @@ order = Order{orderId=2, orderName='o2'}
 order = Order{orderId=3, orderName='o3'}
 ```
 
+
 ### 4、关键词总结
 
 我们是在“对多”关系中举例说明延迟加载的，在“对一”中配置方式基本一样。
 
+
 | 关联关系     | 配置项关键词                                                 | 所在配置文件                    |
-| ------------ | ------------------------------------------------------------ | ------------------------------- |
+| ------------ | ----------------------------------------------------------- | -------------------------------|
 | 对一         | association标签/javaType属性                                 | Mapper配置文件中的resultMap     |
 | 对多         | collection标签/ofType属性                                    | Mapper配置文件中的resultMap     |
 | 对一分步     | association标签/select属性                                   | Mapper配置文件中的resultMap     |
@@ -1540,13 +1546,13 @@ order = Order{orderId=3, orderName='o3'}
 
 ### 1、如果不使用中间表
 
-![](D:\Study\自学\笔记\img\下载 (1).png)
+![](./img/下载 (1).png)
 
 在某一个表中，使用一个字段保存多个“外键”值，这将导致无法使用SQL语句进行关联查询。
 
 ### 2、使用中间表
 
-<img src="D:\Study\自学\笔记\img\下载 (2).png" style="zoom:75%;" />
+<img src="./img/下载 (2).png" style="zoom:75%;" />
 
 这样就可以使用SQL进行关联查询了。只是有可能需要三张表进行关联。
 
@@ -1554,13 +1560,15 @@ order = Order{orderId=3, orderName='o3'}
 
 #### ①方案一：另外设置一个专门的主键字段
 
-![](D:\Study\自学\笔记\img\下载 (3).png)
+![](./img/下载 (3).png)
 
 #### ②方案二：使用联合主键
 
-![](D:\Study\自学\笔记\img\下载 (4).png)
+![](./img/下载 (4).png)
 
-![](D:\Study\自学\笔记\img\下载 (5).png)
+
+
+![](//img/下载 (5).png)
 
 使用联合主键时，只要多个字段的组合不重复即可，单个字段内部是可以重复的。
 
@@ -1799,13 +1807,13 @@ Parameter 'empList' not found. Available parameters are [collection, list]
 
 ### 1、缓存机制介绍
 
-<img src="D:\Study\自学\笔记\img\img002.f2f17d08.png" style="zoom:48%;" />
+<img src="./img/img002.f2f17d08.png" style="zoom:48%;" />
 
 ### 2、一级缓存和二级缓存
 
 #### ①使用顺序
 
-![](D:\Study\自学\笔记\img\img003.383b13a5.png)
+![](./img/img003.383b13a5.png)
 
 查询的顺序是：
 
@@ -1819,11 +1827,11 @@ Parameter 'empList' not found. Available parameters are [collection, list]
 - 一级缓存：SqlSession级别
 - 二级缓存：SqlSessionFactory级别
 
-I<img src="D:\Study\自学\笔记\img\img004.9284a244.png" style="zoom:48%;" />
+I<img src="./img/img004.9284a244.png" style="zoom:48%;" />
 
 它们之间范围的大小参考下面图：
 
-<img src="D:\Study\自学\笔记\img\img005.9469aaf5.png" style="zoom:48%;" />
+<img src="./img/img005.9469aaf5.png" style="zoom:48%;" />
 
 ## 第二节 一级缓存
 
@@ -2221,11 +2229,11 @@ defaultCache标签各属性说明：
 
 org.apache.ibatis.cache.Cache接口：所有缓存都必须实现的顶级接口
 
-![](D:\Study\自学\笔记\img\下载 (6).png)
+![](./img/下载 (6).png)
 
 #### ②Cache接口中的方法
 
-![](D:\Study\自学\笔记\img\下载 (7).png)
+![](./img/下载 (7).png)
 
 | 方法名         | 作用             |
 | -------------- | ---------------- |
@@ -2239,7 +2247,7 @@ org.apache.ibatis.cache.Cache接口：所有缓存都必须实现的顶级接口
 
 ### 2、PerpetualCache
 
-![](D:\Study\自学\笔记\img\img013.fc7969a7.png)
+![](./img/img013.fc7969a7.png)
 
 org.apache.ibatis.cache.impl.PerpetualCache是Mybatis的默认缓存，也是Cache接口的默认实现。Mybatis一级缓存和自带的二级缓存都是通过PerpetualCache来操作缓存数据的。但是这就奇怪了，同样是PerpetualCache这个类，怎么能区分出来两种不同级别的缓存呢？
 
@@ -2250,7 +2258,7 @@ org.apache.ibatis.cache.impl.PerpetualCache是Mybatis的默认缓存，也是Cac
 
 ### 3、一级缓存机制
 
-![](D:\Study\自学\笔记\img\img014.e99fc548.png)
+![](./img/img014.e99fc548.png)
 
 org.apache.ibatis.executor.BaseExecutor类中的关键方法：
 
@@ -2322,21 +2330,21 @@ private <E> List<E> queryFromDatabase(MappedStatement ms, Object parameter, RowB
 
 ### 4、二级缓存机制
 
-![](D:\Study\自学\笔记\img\img015.68f83c81.png)
+![](./img/img015.68f83c81.png)
 
 下面我们来看看CachingExecutor类中的query()方法在不同情况下使用的具体缓存对象：
 
 #### ①未开启二级缓存
 
-![](D:\Study\自学\笔记\img\下载 (8).png)
+![](./img/下载 (8).png)
 
 #### ②使用自带二级缓存
 
-<img src="D:\Study\自学\笔记\img\img017.30498a85.png" style="zoom:67%;" />
+<img src="./img/img017.30498a85.png" style="zoom:67%;" />
 
 #### ③使用EHCache
 
-<img src="D:\Study\自学\笔记\img\img017.30498a85.png" style="zoom:67%;" />
+<img src="./img/img017.30498a85.png" style="zoom:67%;" />
 
 # 第六章 逆向工程
 
@@ -2352,7 +2360,7 @@ private <E> List<E> queryFromDatabase(MappedStatement ms, Object parameter, RowB
 
 ### 2、基本原理
 
-![](D:\Study\自学\笔记\img\img006.62974da4.png)
+![](./img/img006.62974da4.png)
 
 ## 第二节 操作
 
@@ -2456,11 +2464,11 @@ private <E> List<E> queryFromDatabase(MappedStatement ms, Object parameter, RowB
 
 ### 3、执行MBG插件的generate目标
 
-![](D:\Study\自学\笔记\img\img008.a13a6894.png)
+![](./img/img008.a13a6894.png)
 
 ### 4、效果
 
-![](D:\Study\自学\笔记\img\下载 (9).png)
+![](./img/下载 (9).png)
 
 ## 第三节 QBC查询
 
@@ -2542,7 +2550,7 @@ QBC查询最大的特点就是将SQL语句中的WHERE子句进行了组件化的
 
 ### 3、Mybatis内置的类型别名
 
-![](D:\Study\自学\笔记\img\img001.396e5304.png)
+![](./img/img001.396e5304.png)
 
 ## 第二节 类型处理器
 
@@ -2552,7 +2560,7 @@ QBC查询最大的特点就是将SQL语句中的WHERE子句进行了组件化的
 
 Mybatis提供的内置类型处理器：
 
-<img src="D:\Study\自学\笔记\img\img001.396e5304.png" style="zoom:67%;" />
+<img src="./img/img001.396e5304.png" style="zoom:67%;" />
 
 ### 2、日期时间处理
 
@@ -2564,7 +2572,7 @@ MyBatis3.4 以前的版本需要我们手动注册这些处理器，以后的版
 
 如需注册，需要下载 mybatistypehandlers-jsr310，并通过如下方式注册
 
-![](D:\Study\自学\笔记\img\img003.eb0666cc.png)
+![](./img/img003.eb0666cc.png)
 
 ### 3、自定义类型处理器
 
@@ -2665,7 +2673,7 @@ Mybatis 允许在指定 Mapper 映射文件时，只指定其所在的包：
 
 如果工程是 Maven 工程，那么 Mapper 配置文件还是要放在 resources 目录下：
 
-![](D:\Study\自学\笔记\img\下载 (10).png)
+![](./img/下载 (10).png)
 
 说白了就是：Mapper 配置文件所在目录的结构和 Mapper 接口所在包的目录结构一致。
 
@@ -2673,21 +2681,21 @@ Mybatis 允许在指定 Mapper 映射文件时，只指定其所在的包：
 
 #####  [1] IDEA 中看到的目录结构
 
-![](D:\Study\自学\笔记\img\下载 (11).png)
+![](./img/下载 (11).png)
 
 #####  [2]但实际上真实目录结构
 
-![](D:\Study\自学\笔记\img\下载 (12).png)
+![](./img/下载 (12).png)
 
 ##### [3]接口所在包的目录
 
-![](D:\Study\自学\笔记\img\下载 (13).png)
+![](./img/下载 (13).png)
 
 ##### [4]产生这个问题的原因
 
 在 resources 目录下创建目录时没有把包名的点换成斜杠：
 
-![](D:\Study\自学\笔记\img\下载 (14).png)
+![](./img/下载 (14).png)
 
 ## 第四节 插件机制
 
@@ -2699,25 +2707,25 @@ Mybatis 允许在指定 Mapper 映射文件时，只指定其所在的包：
 
 #### ①Executor
 
-![](D:\Study\自学\笔记\img\下载 (15).png)
+![](./img/下载 (15).png)
 
 #### ②ParameterHandler
 
-![](D:\Study\自学\笔记\img\下载 (16).png)
+![](./img/下载 (16).png)
 
 #### ③ResultSetHandler
 
-![](D:\Study\自学\笔记\img\img005.d990ae07.png)
+![](./img/img005.d990ae07.png)
 
 #### ④StatementHandler
 
-![](D:\Study\自学\笔记\img\img006.58cc084a.png)
+![](./img/img006.58cc084a.png)
 
 ### 3、Mybatis 插件机制
 
 如果想编写自己的 Mybatis 插件可以通过实现 org.apache.ibatis.plugin.Interceptor 接口来完成，表示对 Mybatis 常规操作进行拦截，加入自定义逻辑。
 
-![](D:\Study\自学\笔记\img\img007.b1bf32b5.png)
+![](./img/img007.b1bf32b5.png)
 
 但是由于插件涉及到 Mybatis 底层工作机制，在没有足够把握时不要轻易尝试。
 
@@ -2725,17 +2733,17 @@ Mybatis 允许在指定 Mapper 映射文件时，只指定其所在的包：
 
 org.apache.ibatis.executor.statement.PreparedStatementHandler 类：
 
-![](D:\Study\自学\笔记\img\img011.dac8bd7e.png)
+![](./img/img011.dac8bd7e.png)
 
 查找上面目标时，Debug查看源码的切入点是：
 
 org.apache.ibatis.session.defaults.DefaultSqlSession类的update()方法
 
-![](D:\Study\自学\笔记\img\img012.2694b723.png)
+![](./img/img012.2694b723.png)
 
 ## 第六节 总结
 
-![](D:\Study\自学\笔记\img\img014.4d03b574.png)
+![](./img/img014.4d03b574.png)
 
 - Mybatis环境所需依赖 ★
 - 配置

@@ -77,7 +77,7 @@ BeanFactory 的子接口，提供了更多高级特性。面向 Spring 的使用
 
 ##### ③ApplicationContext的主要实现类
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-04-24 163550.png)
+![](./img/屏幕截图 2022-04-24 163550.png)
 
 | 类型名                          | 简介                                                         |
 | ------------------------------- | ------------------------------------------------------------ |
@@ -382,7 +382,7 @@ public class SoldierDao {
 
 ##### 5、四个典型注解没有本质区别
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 180510.png)
+![](./img/屏幕截图 2022-05-01 180510.png)
 
 通过查看源码我们得知，@Controller、@Service、@Repository这三个注解只是在@Component注解的基础上起了三个新的名字。
 
@@ -612,7 +612,7 @@ public class SoldierController {
 
 ###### ②@Autowired 工作流程
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 181636.png)
+![](./img/屏幕截图 2022-05-01 181636.png)
 
 - 首先根据所需要的组件类型到 IOC 容器中查找
   - 能够找到唯一的 bean：直接执行装配
@@ -925,7 +925,7 @@ public class CalculatorStaticProxy implements Calculator {
 
 #### 3、动态代理
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 182931.png)
+![](./img/屏幕截图 2022-05-01 182931.png)
 
 ##### ①生产代理对象的工厂类
 
@@ -1113,7 +1113,7 @@ public void testSoldierServiceDynamicProxy() {
 
 ### 第三节 AOP的核心套路
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 183945.png)
+![](./img/屏幕截图 2022-05-01 183945.png)
 
 ### 第四节 AOP术语
 
@@ -1136,7 +1136,7 @@ AOP：**A**spect **O**riented **P**rogramming面向切面编程
 
 这个概念不是语法层面天然存在的，而是根据附加功能的逻辑上的需要：有十个附加功能，就有十个横切关注点。
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 184916.png)
+![](./img/屏幕截图 2022-05-01 184916.png)
 
 #### 3、通知[记住]
 
@@ -1148,13 +1148,13 @@ AOP：**A**spect **O**riented **P**rogramming面向切面编程
 - 后置通知：在被代理的目标方法**最终结束**后执行（**盖棺定论**）
 - 环绕通知：使用try...catch...finally结构围绕**整个**被代理的目标方法，包括上面四种通知对应的所有位置
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 184927.png)
+![[./img/屏幕截图 2022-05-01 184927.png]]
 
 #### 4、切面[记住]
 
 封装通知方法的类。
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 184948.png)
+![[./img/屏幕截图 2022-05-01 184948.png]]
 
 #### 5、目标
 
@@ -1170,7 +1170,7 @@ AOP：**A**spect **O**riented **P**rogramming面向切面编程
 
 把方法排成一排，每一个横切位置看成x轴方向，把方法从上到下执行的顺序看成y轴，x轴和y轴的交叉点就是连接点。
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 185002.png)
+![[./img/屏幕截图 2022-05-01 185002.png]]
 
 #### 8、切入点[记住]
 
@@ -1188,7 +1188,7 @@ Spring 的 AOP 技术可以通过切入点定位到特定的连接点。
 
 #### 1、基于注解的AOP用到的技术
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 185344.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-01 185344.png" style="zoom:60%;" />
 
 - 动态代理（InvocationHandler）：JDK原生的实现方式，需要被代理的目标类必须实现接口。因为这个技术要求**代理对象和目标对象实现同样的接口**（兄弟两个拜把子模式）。
 - cglib：通过**继承被代理的目标类**（认干爹模式）实现代理，所以不需要目标类实现接口。
@@ -1420,7 +1420,7 @@ public void printLogBeforeCore(JoinPoint joinPoint) {
 
 ###### 2、方法返回值
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 190359.png)
+![](./img/屏幕截图 2022-05-01 190359.png)
 
 在返回通知中，通过@AfterReturning注解的returning属性获取目标方法的返回值
 
@@ -1443,7 +1443,7 @@ public void printLogAfterCoreSuccess(JoinPoint joinPoint, Object targetMethodRet
 
 ###### 3、目标方法抛出的异常
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 190438.png)
+![](./img/屏幕截图 2022-05-01 190438.png)
 
 在异常通知中，通过@AfterThrowing注解的throwing属性获取目标方法抛出的异常对象
 
@@ -1570,7 +1570,7 @@ execution(* int *..*Service.*(.., int))
 
 ###### 3、总结
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 202332.png)
+![](./img/屏幕截图 2022-05-01 202332.png)
 
 > TIP
 >
@@ -1651,11 +1651,11 @@ public Object manageTransaction(
 
 实际开发时，如果有多个切面嵌套的情况，要慎重考虑。例如：如果事务切面优先级高，那么在缓存中命中数据的情况下，事务切面的操作都浪费了。
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 202742.png" style="zoom:50%;" />
+<img src="./img/屏幕截图 2022-05-01 202742.png" style="zoom:50%;" />
 
 此时应该将缓存切面的优先级提高，在事务操作之前先检查缓存中是否存在目标数据。
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 202753.png" style="zoom:50%;" />
+<img src="./img/屏幕截图 2022-05-01 202753.png" style="zoom:50%;" />
 
 ##### 实验七 没有接口的情况
 
@@ -1690,19 +1690,19 @@ public class EmployeeService {
 
 ###### ①没有实现接口情况
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 203056.png)
+![](./img/屏幕截图 2022-05-01 203056.png)
 
 ###### ②有实现接口的情况
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 203110.png)
+![](./img/屏幕截图 2022-05-01 203110.png)
 
 同时我们发现：Mybatis 调用的 Mapper 接口类型的对象其实也是动态代理机制
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 203121.png)
+![](./img/屏幕截图 2022-05-01 203121.png)
 
 #### 3、小结
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 185619.png" style="zoom:60%;" />
+<img src="./img/屏幕截图 2022-05-01 185619.png" style="zoom:60%;" />
 
 ### 第六节 基于XML的AOP[了解]
 
@@ -1835,15 +1835,15 @@ public class AOPTest {
 - 应用了切面后，真正放在IOC容器中的是代理类的对象
 - 目标类并没有被放到IOC容器中，所以根据目标类的类型从IOC容器中是找不到的
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 203650.png" style="zoom:50%;" />
+<img src="./img/屏幕截图 2022-05-01 203650.png" style="zoom:50%;" />
 
 从内存分析的角度来说，IOC容器中引用的是代理对象，代理对象引用的是目标对象。IOC容器并没有直接引用目标对象，所以根据目标类本身在IOC容器范围内查找不到。
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 203729.png)
+![](./img/屏幕截图 2022-05-01 203729.png)
 
 debug查看代理类的类型：
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 203757.png" style="zoom:50%;" />
+<img src="./img/屏幕截图 2022-05-01 203757.png" style="zoom:50%;" />
 
 ##### 5、情景五
 
@@ -1851,7 +1851,7 @@ debug查看代理类的类型：
 - 创建一个切面类，对上面的类应用通知
   - 测试：根据类获取 bean，能获取到
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 203905.png)
+![](./img/屏幕截图 2022-05-01 203905.png)
 
 debug查看实际类型：CGLIB
 
@@ -1933,11 +1933,11 @@ debug查看实际类型：CGLIB
 
 ##### 1、对实现了接口的类应用切面
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 204420.png)
+![](./img/屏幕截图 2022-05-01 204420.png)
 
 ##### 2、对没实现接口的类应用切面
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-01 204444.png)
+![](./img/屏幕截图 2022-05-01 204444.png)
 
 ## 第三章 声明式事务
 
@@ -2211,7 +2211,7 @@ public interface TransactionManager {
 
 ##### ②技术体系
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 123929.png)
+![](./img/屏幕截图 2022-05-03 123929.png)
 
 我们现在要使用的事务管理器是org.springframework.jdbc.datasource.**DataSourceTransactionManager**，将来整合 Mybatis 用的也是这个类。
 
@@ -2451,7 +2451,7 @@ WARNING
 
 注意：导入名称空间时有好几个重复的，我们需要的是 **tx 结尾**的那个。
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\img003.bc58e542.png)
+![](./img/img003.bc58e542.png)
 
 ###### ③在需要事务的方法上使用注解
 
@@ -2542,15 +2542,15 @@ junit 测试方法不需要修改，执行后查看数据是否被修改。
 
 ###### ①开启事务的方法
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 125942.png" style="zoom:50%;" />
+<img src="./img/屏幕截图 2022-05-03 125942.png" style="zoom:50%;" />
 
 ###### ②提交事务的方法
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 125951.png" style="zoom:50%;" />
+<img src="./img/屏幕截图 2022-05-03 125951.png" style="zoom:50%;" />
 
 ###### ③回滚事务的方法
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 130001.png" style="zoom:50%;" />
+<img src="./img/屏幕截图 2022-05-03 130001.png" style="zoom:50%;" />
 
 #### 实验三 事务属性：只读
 
@@ -2739,13 +2739,13 @@ public void updateEmpSalaryById(Integer empId, Double salary) throws FileNotFoun
 
 ##### 1、视角需要提升
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 135221.png)
+![](./img/屏幕截图 2022-05-03 135221.png)
 
 ##### 2、测试的准备工作
 
 ###### ①思路
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 135311.png)
+![](./img/屏幕截图 2022-05-03 135311.png)
 
 ###### ②EmpService中参与测试的方法
 
@@ -2819,7 +2819,7 @@ public void updateEmpName(Integer empId, String empName) {
 }
 ```
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 135636.png" style="zoom:67%;" />
+<img src="./img/屏幕截图 2022-05-03 135636.png" style="zoom:67%;" />
 
 测试结果：执行查询操作的事务读取了另一个尚未提交的修改。
 
@@ -2845,7 +2845,7 @@ public void updateEmpName(Integer empId, String empName) {
 
 ##### 1、事务传播行为要研究的问题
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 135841.png" style="zoom:67%;" />
+<img src="./img/屏幕截图 2022-05-03 135841.png" style="zoom:67%;" />
 
 ##### 2、propagation属性
 
@@ -2929,7 +2929,7 @@ public void testPropagation() {
 
 ###### ②测试 REQUIRED 模式
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 140400.png" style="zoom:67%;" />
+<img src="./img/屏幕截图 2022-05-03 140400.png" style="zoom:67%;" />
 
 效果：内层方法A、内层方法B所做的修改都没有生效，总事务回滚了。
 
@@ -2953,17 +2953,17 @@ public void updateEmpSalaryInner(Integer empId, Double empSalary) {
 
 ###### [2]执行流程
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 140517.png" style="zoom:67%;" />
+<img src="./img/屏幕截图 2022-05-03 140517.png" style="zoom:67%;" />
 
 ##### 4、实际开发情景
 
 ###### ①Service方法应用了通知
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 140626.png" style="zoom:67%;" />
+<img src="./img/屏幕截图 2022-05-03 140626.png" style="zoom:67%;" />
 
 ###### ②过滤器或拦截器等类似组件
 
-<img src="F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 140655.png" style="zoom:67%;" />
+<img src="./img/屏幕截图 2022-05-03 140655.png" style="zoom:67%;" />
 
 ###### ③升华
 
@@ -3030,11 +3030,11 @@ public void updateEmpSalaryInner(Integer empId, Double empSalary) {
 >
 > 在输入 tx:advice 标签时，需要导入 tx: 名称空间，此时需要注意不要导入错误。我们需要的是以 tx 结尾的名称空间。如下图所示：
 >
-> ![](F:\LearninginUniversity\2022——自学\笔记\img\img003.bc58e542.png)
+> ![](./img/img003.bc58e542.png)
 
 #### 4、配置完成后 bean 之间的关系
 
-![](F:\LearninginUniversity\2022——自学\笔记\img\屏幕截图 2022-05-03 141102.png)
+![](./img/屏幕截图 2022-05-03 141102.png)
 
 #### 5、注意
 

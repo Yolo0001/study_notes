@@ -8,7 +8,7 @@
 6. 区别的是Redis会**周期性**的把**更新的数据写入磁盘**或者把修改操作写入追加的记录文件。
 7. 并且在此基础上实现了**master-slave(主从)**同步。
 
-![](D:\Study\自学\笔记\img\图片1.jpg)
+![](./img/图片1.jpg)
 
 [Redis官方网站](http://redis.io)
 
@@ -48,7 +48,7 @@ String类型是二进制安全的。意味着Redis的string可以包含任何数
 
 String类型是Redis最基本的数据类型，一个Redis中字符串value最多可以是512M
 
-![](D:\Study\自学\笔记\img\redis界面.png)
+![](./img/redis界面.png)
 
 *NX：当数据库中key不存在时，可以将key-value添加数据库
 
@@ -126,7 +126,7 @@ getset <key><value>
 
 String的数据结构为简单动态字符串(Simple Dynamic String,缩写SDS)。是可以修改的字符串，内部结构实现上类似于Java的ArrayList，采用预分配冗余空间的方式来减少内存的频繁分配.
 
-![](D:\Study\自学\笔记\img\redis中string数据结构.png)
+![](./img/redis中string数据结构.png)
 
 如图中所示，内部为当前字符串实际分配的空间capacity一般要高于实际字符串长度len。当字符串长度小于1M时，扩容都是加倍现有的空间，如果超过1M，扩容时一次只会多扩1M的空间。需要注意的是字符串最大长度为512M。
 
@@ -138,7 +138,7 @@ Redis 列表是简单的字符串列表，按照插入顺序排序。你可以�
 
 它的底层实际是个双向链表，对两端的操作性能很高，通过索引下标的操作中间的节点性能会较差。
 
-![](D:\Study\自学\笔记\img\redis列表.jpg)
+![](./img/redis列表.jpg)
 
 ### 常用命令
 
@@ -182,7 +182,7 @@ List的数据结构为快速链表quickList。
 
 因为普通的链表需要的附加指针空间太大，会比较浪费空间。比如这个列表里存的只是int类型的数据，结构上还需要两个额外的指针prev和next。
 
-![](D:\Study\自学\笔记\img\redisList数据结构.png)
+![](./img/redisList数据结构.png)
 
 Redis将链表和ziplist结合起来组成了quicklist。也就是将多个ziplist使用双向指针串起来使用。这样既满足了快速的插入删除性能，又不会出现太大的空间冗余。
 
@@ -238,7 +238,7 @@ Redis hash是一个string类型的field和value的映射表，hash特别适合�
 
 主要有以下2种存储方式：
 
-![](D:\Study\自学\笔记\img\QQ截图20230719141101.png)
+![](./img/QQ截图20230719141101.png)
 
 ### 常用命令
 
@@ -304,7 +304,7 @@ zrank <key><value>返回该值在集合中的排名，从0开始。
 
 案例：如何利用zset实现一个文章访问量的排行榜？
 
-![](D:\Study\自学\笔记\img\zset案例.jpg)
+![](./img/zset案例.jpg)
 
 ### 数据结构
 
@@ -324,13 +324,13 @@ zset底层使用了两个数据结构
 
 1. 有序链表
 
-![](D:\Study\自学\笔记\img\有序链表.png)
+![](./img/有序链表.png)
 
 要查找值为51的元素，需要从第一个元素开始依次查找、比较才能找到。共需要6次比较。
 
 1.  跳跃表
 
-![](D:\Study\自学\笔记\img\skiplist_redis.png)
+![](./img/skiplist_redis.png)
 
 从第2层开始，1节点比51节点小，向后比较。
 

@@ -562,7 +562,7 @@ value 数组被声明为 final，这意味着 value 数组初始化之后就不�
 
 如果一个 String 对象已经被创建过了，那么就会从 String Pool 中取得引用。只有 String 是不可变的，才可能使用 String Pool。
 
-![](D:\Study\自学\笔记\img\image-20191210004132894.png)
+![](./img/image-20191210004132894.png)
 
 ##### 3.安全性
 
@@ -1086,7 +1086,7 @@ JVM会使用常量池来管理字符串直接量。在执行这句话时，JVM�
 
 ### Java中的异常处理
 
-![](D:\Study\自学\笔记\img\Throwable.png)
+![](./img/Throwable.png)
 
 在 Java 中，所有的异常都有一个共同的祖先java.lang包中的 **Throwable**类。Throwable： 有两个重要的子类： **Exception（异常）** 和 **Error（错误）** ，二者都是 Java 异常处理的重要子类，各自都包含大量子类。 
 
@@ -1398,11 +1398,11 @@ Java中的集合类主要由Collection和Map这两个接口派生而出，其中
 
 Collection体系的继承树：
 
-![](D:\Study\自学\笔记\img\74C2C3389688C6364FF2DE8AA768A039.jpg)
+![](./img/74C2C3389688C6364FF2DE8AA768A039.jpg)
 
 Map体系的继承树：
 
-![](D:\Study\自学\笔记\img\E26BABF74692B006DA33C112A6FD5EEC.jpg)
+![](./img/E26BABF74692B006DA33C112A6FD5EEC.jpg)
 
 *注：紫色框体代表接口，其中加粗的是代表四类集合的接口。蓝色框体代表实现类，其中有阴影的是常用实现类。*
 
@@ -1426,7 +1426,7 @@ java.util包下也有线程安全的集合类，例如Vector、Hashtable。这�
 
 java.util.concurrent包下线程安全的集合类的体系结构：
 
-![](D:\Study\自学\笔记\img\53AA859E1B3A9CD7709DF9366999B88D.jpg)
+![](./img/53AA859E1B3A9CD7709DF9366999B88D.jpg)
 
 ### 2.3 Map接口有哪些实现类？
 
@@ -1463,7 +1463,7 @@ HashMap是最经典的Map实现，下面以它的视角介绍put的过程：
 
 HashMap添加数据的详细过程，如下图：
 
-![](D:\Study\自学\笔记\img\18330EB2310CB83A25FA317E65ED60EB.png)
+![](./img/18330EB2310CB83A25FA317E65ED60EB.png)
 
 ### 2.5 如何得到一个线程安全的Map？
 
@@ -1503,15 +1503,15 @@ JDK8中的HashMap，是基于数组+链表+红黑树来实现的，它的底层�
 
 例如我们从16扩展为32时，具体的变化如下所示：
 
-![](D:\Study\自学\笔记\img\B7A9F3ADBA028FE6FDE22C94D566B4F1.png)
+![](./img/B7A9F3ADBA028FE6FDE22C94D566B4F1.png)
 
 因此元素在重新计算hash之后，因为n变为2倍，那么n-1的mask范围在高位多1bit(红色)，因此新的index就会发生这样的变化：
 
-![](D:\Study\自学\笔记\img\FB03BC4205AD26DC0210B12412AAC145.png)
+![](./img/FB03BC4205AD26DC0210B12412AAC145.png)
 
 因此，我们在扩充HashMap的时候，不需要重新计算hash，只需要看看原来的hash值新增的那个bit是1还是0就好了，是0的话索引没变，是1的话索引变成“原索引+oldCap”。可以看看下图为16扩充为32的resize示意图：
 
-![](D:\Study\自学\笔记\img\C2928A93915A4AEF2709862EBAC8515C.png)
+![](./img/C2928A93915A4AEF2709862EBAC8515C.png)
 
 这个设计确实非常的巧妙，既省去了重新计算hash值的时间，而且同时，由于新增的1bit是0还是1可以认为是随机的，因此resize的过程，均匀的把之前的冲突的节点分散到新的bucket了。
 
@@ -1572,13 +1572,13 @@ JDK 1.7中的实现：
 
 在 jdk 1.7 中，ConcurrentHashMap 是由 Segment 数据结构和 HashEntry 数组结构构成，采取分段锁来保证安全性。Segment 是 ReentrantLock 重入锁，在 ConcurrentHashMap 中扮演锁的角色，HashEntry 则用于存储键值对数据。一个 ConcurrentHashMap 里包含一个 Segment 数组，一个 Segment 里包含一个 HashEntry 数组，Segment 的结构和 HashMap 类似，是一个数组和链表结构。
 
-![](D:\Study\自学\笔记\img\A064CF0DD49D1B3694548913C28728DB.png)
+![](./img/A064CF0DD49D1B3694548913C28728DB.png)
 
 JDK 1.8中的实现：
 
 JDK1.8 的实现已经摒弃了 Segment 的概念，而是直接用 Node 数组+链表+红黑树的数据结构来实现，并发控制使用 Synchronized 和 CAS 来操作，整个看起来就像是优化过且线程安全的 HashMap，虽然在 JDK1.8 中还能看到 Segment 的数据结构，但是已经简化了属性，只是为了兼容旧版本。
 
-![](D:\Study\自学\笔记\img\9C8ABF1CD3475339A49DE3B9E1696FE7.png)
+![](./img/9C8ABF1CD3475339A49DE3B9E1696FE7.png)
 
 ### 2.18 ConcurrentHashMap是怎么分段分组的？
 
@@ -2113,7 +2113,7 @@ public class Main {
 }
 ```
 
-![](D:\Study\自学\笔记\img\alg-sort-fast-1.jpg)
+![](./img/alg-sort-fast-1.jpg)
 
 快速排序的时间复杂度在最坏情况下是O(N2)，平均的时间复杂度是O(N*lgN)。
 
